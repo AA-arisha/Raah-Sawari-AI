@@ -1,1 +1,4 @@
-eta_model.pkl le_traffic.pkl le_vehicle.pkl traffic_model.pkl
+.venv/
+__pycache__/
+*.pkl
+*.csv

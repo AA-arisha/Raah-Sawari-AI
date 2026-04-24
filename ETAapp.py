@@ -7,8 +7,7 @@ import requests
 
 app = Flask(__name__)
 
-# ── Config ────────────────────────────────────────────────────────────────────
-TOMTOM_API_KEY = "7P4psmZgGyoSQc1bwplcm6LrENOkwkqu"
+
 
 # ── Load Models ───────────────────────────────────────────────────────────────
 eta_model      = joblib.load("eta_model.pkl")
