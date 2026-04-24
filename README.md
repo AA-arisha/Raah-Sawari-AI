@@ -11,7 +11,7 @@ ETA (Estimated Time of Arrival) for bike, car, and rickshaw rides.
 The training dataset is not included in this repository due to file size.
 
 📥 **Download CSV file from Google Drive:**
-👉 [[Click here to download ETA2_dataset.csv]((https://drive.google.com/file/d/1ciTqix5m_mvFdMFopmAUS4cW7cppjxry/view?usp=sharing)E))
+👉((https://drive.google.com/file/d/1ciTqix5m_mvFdMFopmAUS4cW7cppjxry/view?usp=sharing)E))
 
 After downloading, place it in the same folder as the Python files:
 raahsawari/
