@@ -56,14 +56,13 @@ def get_driver_arrival(traffic_level):
 def predict_eta():
     try:
         data = request.get_json()
+        pickup = data["pickup"]       # { lat, lng }
+        drop   = data["drop"]  # { lat, lng }  ← or rename to "drop"
 
-        pickup_text      = data["pickup"]
-        destination_text = data["destination"]
-
-        # Step 1: Convert text → lat/lng
-        origin_lat, origin_lng           = geocode(pickup_text)
-        destination_lat, destination_lng = geocode(destination_text)
-
+        origin_lat,      origin_lng      = pickup["lat"], pickup["lng"]
+        destination_lat, destination_lng = drop["lat"],   drop["lng"]
+        
+        print(origin_lat, origin_lng,  destination_lat, destination_lng   )
         if not all([origin_lat, origin_lng, destination_lat, destination_lng]):
             return jsonify({
                 "status":  "error",
@@ -130,4 +129,4 @@ def home():
     })
 
 if __name__ == "__main__":
-    app.run(debug=True, port=5000)
+    app.run(debug=True, port=3000)

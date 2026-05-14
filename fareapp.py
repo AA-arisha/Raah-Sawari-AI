@@ -67,14 +67,13 @@ def get_demand_supply(hour):
 def predict_fare():
     try:
         data         = request.get_json()
-        pickup_text  = data["pickup"]
-        dest_text    = data["destination"]
+        pickup      = data["pickup"]
+        drop        = data["drop"]
         vehicle_type = data["vehicle_type"]   # bike / car / rickshaw
         duration_min = data["duration_min"]   # from ETA API
 
-        # Step 1: Geocode
-        origin_lat, origin_lng           = geocode(pickup_text)
-        destination_lat, destination_lng = geocode(dest_text)
+        origin_lat,      origin_lng      = pickup["lat"], pickup["lng"]
+        destination_lat, destination_lng = drop["lat"],   drop["lng"]
 
         if not all([origin_lat, origin_lng, destination_lat, destination_lng]):
             return jsonify({"status": "error", "message": "Location not found"}), 400
@@ -147,4 +146,4 @@ def home():
     })
 
 if __name__ == "__main__":
-    app.run(debug=True, port=5001)
+    app.run(debug=True, port=3001)

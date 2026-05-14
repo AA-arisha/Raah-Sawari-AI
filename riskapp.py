@@ -92,7 +92,7 @@ def health():
 if __name__ == "__main__":
     print("=" * 50)
     print("  Driver Risk Analysis API Starting...")
-    print("  URL : http://localhost:5000")
-    print("  POST: http://localhost:5000/predict-risk")
+    print("  URL : http://localhost:3002")
+    print("  POST: http://localhost:3002/predict-risk")
     print("=" * 50)
-    app.run(debug=True, port=5000)
+    app.run(debug=True, port=3002)
